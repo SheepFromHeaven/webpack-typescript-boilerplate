@@ -1,5 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
+var DashboardPlugin = require('webpack-dashboard/plugin');
+
+var excludes = [
+    '/node_modules/',
+    '/dist/',
+    '/test/',
+    '/.tmp/'
+];
 
 module.exports = {
     entry: './src/app.ts',
@@ -19,12 +27,13 @@ module.exports = {
         rules: [
             {
                 test: /\.ts?$/,
-                include: [path.resolve(__dirname, 'src')],
-                exclude: [],
-                loader: 'ts-loader'
+                exclude: excludes,
+                loader: 'awesome-typescript-loader'
             }
         ]
     },
+
+    devtool: 'source-map',
 
     devServer: {
         contentBase: path.join(__dirname, ''),
@@ -34,6 +43,11 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'vendor.min.js'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new DashboardPlugin()
     ]
 };

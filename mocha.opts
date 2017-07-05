@@ -1,3 +1,5 @@
 --compilers ts:ts-node/register
 
+helpers/mocha-globals.js
+
 src/**/*.spec.ts

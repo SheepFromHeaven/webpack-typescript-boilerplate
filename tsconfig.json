@@ -1,10 +1,31 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "module": "commonjs",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": true
-  }
+    "allowJs": true,
+    "jsx": "react",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "ES5",
+    "experimentalDecorators": true,
+    "lib": ["es2015", "es2017", "dom"]
+  },
+  "typeRoots": [
+    "node_modules/@types"
+  ],
+  "types": [
+    "mocha",
+    "chai",
+    "sinon",
+    "sinon-chai"
+  ],
+  "exclude": [
+    "node_modules",
+    "test",
+    "dist",
+    ".tmp",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ]
 }

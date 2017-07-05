@@ -1,25 +1,27 @@
 {
   "name": "webpack-ts-boilerplate",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "devDependencies": {
     "@types/chai": "^3.5.2",
     "@types/mocha": "^2.2.41",
-    "@types/sinon": "^2.2.1",
-    "babel-loader": "^7.0.0",
+    "@types/sinon": "^2.3.2",
+    "@types/sinon-chai": "^2.7.28",
+    "awesome-typescript-loader": "^3.2.1",
+    "babel-loader": "^7.1.1",
     "chai": "^3.5.0",
-    "chai-sinon": "^2.8.1",
-    "mocha": "^3.3.0",
+    "mocha": "^3.4.2",
     "nyc": "^10.3.2",
     "sinon": "^2.2.0",
-    "ts-loader": "^2.0.3",
-    "ts-node": "^3.0.4",
-    "typescript": "^2.3.2",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "sinon-chai": "^2.11.0",
+    "ts-node": "^3.1.0",
+    "typescript": "^2.4.1",
+    "webpack": "^2.6.1",
+    "webpack-dashboard": "^0.4.0",
+    "webpack-dev-server": "^2.5.0"
   },
   "scripts": {
-    "start": "yarn coverage && node_modules/.bin/webpack-dev-server",
+    "start": "node_modules/.bin/webpack-dashboard -- node_modules/.bin/webpack-dev-server",
     "build": "node_modules/.bin/webpack",
     "test": "node_modules/.bin/mocha --opts mocha.opts",
     "coverage": "node_modules/.bin/nyc node_modules/.bin/mocha --opts mocha.opts"
